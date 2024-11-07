@@ -6,6 +6,12 @@ login_url = "http://catalogo.uns.edu.ar/vufind/MyResearch/Home"
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
 
+if username and password:
+    print("Datos de inicio de sesión cargados correctamente")
+else:
+    print("No se encontraron datos de inicio de sesión")
+    exit()
+
 session = requests.Session()
 
 login_page = session.get(login_url)
